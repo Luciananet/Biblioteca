@@ -21,6 +21,8 @@
 
 <div class="row">
     <div class="col-md-12">
+        
+                @if(Model.Count > 0 ) {
         <table class="table table-striped"> 
             <thead>
                 <tr><th>Id</th>
@@ -31,7 +33,8 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach(Livro l in Model)
+                
+                @foreach(Livro l in Model)//Como fazer para aparecer mensagem registro não encontrado
                 {
                 <tr>
                     <td>@l.Id</td>
@@ -41,7 +44,11 @@
                     <td><a href="/Livro/Edicao/@l.Id">Editar</a></td>
                 </tr>
                 }
+               
             </tbody>
         </table>
+         }else{
+                    <p>Nenhum registro encontrado.</p>
+                }
     </div>
 </div>
